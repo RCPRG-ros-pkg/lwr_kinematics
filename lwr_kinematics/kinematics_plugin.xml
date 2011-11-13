@@ -1,0 +1,7 @@
+<library path="lib/liblwr_kinematics">
+  <class name="lwr_arm_kinematics/IKFastKinematicsPlugin" type="lwr_arm_kinematics::IKFastKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>
+      Kinematics plugin for LWR arm.
+    </description>
+  </class>
+</library>

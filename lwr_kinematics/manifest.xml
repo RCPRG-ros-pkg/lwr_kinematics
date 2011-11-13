@@ -1,0 +1,25 @@
+<package>
+  <description brief="lwr_kinematics">
+
+     lwr_kinematics
+
+  </description>
+  <author>Konrad Banachowicz</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/lwr_kinematics</url>
+  <depend package="kinematics_base"/>
+	<depend package="pluginlib"/>
+	<depend package="tf"/>
+  <depend package="tf_conversions"/>
+	<depend package="kdl"/>
+	<depend package="kdl_parser"/>
+	<depend package="urdf"/>
+
+  <export>
+    <kinematics_base plugin="${prefix}/kinematics_plugin.xml" />
+  </export>
+
+</package>
+
+
