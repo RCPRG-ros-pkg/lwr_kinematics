@@ -225,9 +225,7 @@ public:
 
         return true;
     }
-bool getCount(int &count, 
-                              const int &max_count, 
-                              const int &min_count)
+bool getCount(int &count, const int &max_count, const int &min_count)
 {
   if(count > 0)
   {
@@ -391,7 +389,7 @@ bool getCount(int &count,
    			double initial_guess = vfree[0] = ik_seed_state[freeParams[0]];
 
 				int num_positive_increments = (int)((jointMax[freeParams[0]]-initial_guess)/search_discretization_angle_);
-  			int num_negative_increments = (int)((initial_guess + jointMin[freeParams[0]])/search_discretization_angle_);
+  			int num_negative_increments = (int)((jointMin[freeParams[0]] + initial_guess)/search_discretization_angle_);
   			ROS_DEBUG("%f %f %f %d %d \n\n",initial_guess,jointMax[freeParams[0]],jointMin[freeParams[0]],num_positive_increments,num_negative_increments);
 
         while (ros::Time::now() < maxTime) {
@@ -417,7 +415,7 @@ bool getCount(int &count,
               }
         		}
 
-    				if(!getCount(count,num_positive_increments,-num_negative_increments)) {
+    				if(!getCount(count, num_positive_increments, num_negative_increments)) {
       				error_code = kinematics::NO_IK_SOLUTION;
       				return false;
     				}
